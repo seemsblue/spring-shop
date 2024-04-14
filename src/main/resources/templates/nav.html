@@ -1,0 +1,9 @@
+<div class="nav" th:fragment="navbar">
+    <a class="logo">SpringMall</a>
+    <a href="/list">List</a>
+    <a href="/write-list">Write</a>
+    <a href="/my-page">마이페이지</a>
+    <p sec:authentication="principal.username"></p>
+    <button sec:authorize="isAuthenticated()" th:onclick="fetch('/logout')">로그아웃</button>
+
+</div>

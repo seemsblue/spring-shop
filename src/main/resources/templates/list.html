@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{nav.html::navbar}"></div>
+
+<h1>리스트</h1>
+
+<div class="card" th:each="i : ${name}">
+    <img src="https://placehold.co/300">
+    <div>
+        <a th:href="@{'/detail/' + ${i.getId()}}"><h4 th:text="${i.getTitle()}" >팬츠</h4></a>
+        <p th:text="${i.getPrice()}+'원'">33억</p>
+        <a th:href="@{'/edit-list/'+${i.getId()}}">🔮</a>
+        <span  th:onclick="fetch('/deleteItem?id=[[${i.id}]]',{
+        method:'DELETE'
+        })
+        .then(result=>{
+            console.log(result.status);
+            return result.text();
+            })
+        .then(()=>{
+        location.reload()
+        })">🔮</span>    <!--서버에서 리스트나 맵 보낼때는 result.json-->
+
+    </div>
+</div>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{nav.html::navbar}"></div>
+
+<h4>가입페이지임</h4>
+
+<form action="/member" method="POST">
+    <input name="displayName" maxlength="10" placeholder="닉네임 최대 10자">
+    <input name="username" maxlength="14" placeholder="아이디 최대 14자">
+    <input name="password" maxlength="18" placeholder="최대 18자" type="password">
+    <button type="submit">Sign up</button>
+</form>
+</body>
+</html>

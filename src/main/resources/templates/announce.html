@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div th:each="i : ${items}">
+        <h2 th:text="${i.title}">ㅇㅇ</h2>
+        <p th:text="'사유 '+${i.getValue()}">ㅇㅇ</p>
+    </div>
+
+</body>
+</html>
